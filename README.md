@@ -2,6 +2,8 @@
 
 A modern, fast-paced historical technology comparison game for the browser. Inspired by *The Higher Lower Game*, featuring 777 curated human inventions and scientific breakthroughs with high-resolution imagery and trivia.
 
+### 🌐 Play Online: [https://milospavlovic7.github.io/tech-age-test/](https://milospavlovic7.github.io/tech-age-test/)
+
 ![Tech Age Test Preview](preview.png)
 
 ---
@@ -36,10 +38,14 @@ A modern, fast-paced historical technology comparison game for the browser. Insp
 
 ## 🚀 Quick Start
 
-### Option 1: Direct in Browser
+### Option 1: Play Online (No installation required)
+Launch the game directly in your browser:  
+👉 **[https://milospavlovic7.github.io/tech-age-test/](https://milospavlovic7.github.io/tech-age-test/)**
+
+### Option 2: Run Locally (Standalone)
 Simply double-click `pokreni_igru.bat` or open `index.html` directly in any modern web browser.
 
-### Option 2: Local HTTP Server (Node.js)
+### Option 3: Local HTTP Server (Node.js)
 Run the lightweight built-in Node server:
 ```bash
 # Double-click pokreni_server.bat or run:
