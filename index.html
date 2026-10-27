@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tech Age Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Floating Header -->
+  <header class="top-header">
+    
+    <!-- Left: Pure plain white text (NO buttons) -->
+    <div class="brand-text">Tech Age Test</div>
+
+    <!-- Center: Question Switcher Centered! (NO emojis!) -->
+    <div class="center-header">
+      <button class="question-btn" id="question-mode-btn" title="Click to switch between Which came before? and Which came after?">
+        <span id="question-text">WHICH CAME BEFORE?</span>
+        <span class="switch-tag" id="switch-tag">SWITCH</span>
+      </button>
+    </div>
+
+    <!-- Right: Score, Best, and Settings ⚙️ button -->
+    <div class="right-header">
+      <div class="score-badge" id="score-badge">
+        <span>Score</span>: <span class="val" id="score-value">0</span>
+      </div>
+
+      <div class="score-badge best" id="best-badge">
+        <span>Best</span>: <span class="val" id="best-value">0</span>
+      </div>
+
+      <!-- Settings button (Only emoji allowed) -->
+      <button class="settings-btn" id="settings-btn" title="Settings">⚙️</button>
+
+      <!-- Settings Dropdown Menu (English only, Sound and Advance mode) -->
+      <div class="settings-dropdown" id="settings-dropdown">
+        <div class="setting-row">
+          <span class="setting-label">Sound</span>
+          <button class="setting-ctrl-btn active" id="setting-btn-sound">On</button>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">Advance</span>
+          <button class="setting-ctrl-btn active" id="setting-btn-prog">Click to proceed</button>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Fullscreen Split Arena (50% Left / 50% Right) -->
+  <main class="split-arena" id="split-arena">
+
+    <!-- LEFT HALF (Current / Established Item) -->
+    <section class="half-card left-side" id="left-card">
+      <div class="half-bg-wrap">
+        <img id="left-img" class="half-img" alt="Left Tech" loading="eager">
+      </div>
+      <div class="half-overlay"></div>
+
+      <!-- Standalone Fixed Verdict Badge (Separated from text content so text never shifts) -->
+      <div class="verdict-banner">
+        <div class="status-badge" id="left-status-badge" style="display: none;">BEFORE</div>
+      </div>
+
+      <!-- Content Vertically Centered -->
+      <div class="card-content">
+        <div class="category-badge" id="left-category">Technology</div>
+        <!-- English Title Only -->
+        <h1 class="tech-title" id="left-title">Telephone</h1>
+
+        <!-- Revealed Data: Left card retains all its data when right moves over! -->
+        <div class="reveal-box" id="left-reveal-box" style="display: none;">
+          <div class="year-number" id="left-year-number">1876</div>
+          <div class="location-tag" id="left-location-tag"></div>
+          <div class="trivia-text" id="left-trivia-text"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENTER DIVIDER
+         - Normal state: VS
+         - Revealed state: YEAR DIFFERENCE
+         - Game Over state: GAME OVER + YEAR DIFFERENCE + FINAL SCORE
+    -->
+    <div class="center-divider" id="center-divider">
+      <div class="center-content">
+        <div class="center-title" id="center-title">VS</div>
+        <div class="center-subtitle" id="center-subtitle" style="display: none;"></div>
+        <div class="center-score" id="center-score" style="display: none;"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT HALF (Challenger / Incoming Item) -->
+    <section class="half-card right-side" id="right-card">
+      <div class="half-bg-wrap">
+        <img id="right-img" class="half-img" alt="Right Tech" loading="eager">
+      </div>
+      <div class="half-overlay"></div>
+
+      <!-- Standalone Fixed Verdict Badge (Separated from text content so text never shifts) -->
+      <div class="verdict-banner">
+        <div class="status-badge" id="right-status-badge" style="display: none;">AFTER</div>
+      </div>
+
+      <!-- Content Vertically Centered -->
+      <div class="card-content">
+        <div class="category-badge" id="right-category">Technology</div>
+        <!-- English Title Only -->
+        <h1 class="tech-title" id="right-title">Bicycle</h1>
+
+        <!-- Revealed Box (Hidden until clicked) -->
+        <div class="reveal-box" id="right-reveal-box" style="display: none;">
+          <div class="year-number" id="right-year-number">1817</div>
+          <div class="location-tag" id="right-location-tag"></div>
+          <div class="trivia-text" id="right-trivia-text"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Proceed Button (Default: Click to proceed / New Game on Game Over) -->
+  <button class="proceed-btn" id="proceed-btn">Next Round (Space)</button>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Load Dataset and Logic -->
+  <script src="data/technologies.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
