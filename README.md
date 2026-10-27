@@ -2,6 +2,8 @@
 
 A modern, fast-paced historical technology comparison game for the browser. Inspired by *The Higher Lower Game*, featuring 777 curated human inventions and scientific breakthroughs with high-resolution imagery and trivia.
 
+![Tech Age Test Preview](preview.png)
+
 ---
 
 ## 🎮 How to Play
